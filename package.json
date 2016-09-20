@@ -1,0 +1,40 @@
+{
+  "name": "wscript-avoider",
+  "version": "1.0.0",
+  "description": "Validation to avoid running under Windows Script Host (specific to older Windows versions).",
+  "keywords": [
+    "wscript",
+    "windows",
+    "avoid"
+  ],
+  "homepage": "https://xcdl.github.io/",
+  "bugs": {
+    "url": "https://github.com/xcdl/wscript-avoider-js/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Liviu Ionescu",
+    "email": "ilg@livius.net",
+    "url": "http://liviusdotnet.wordpress.com"
+  },
+  "contributors": [],
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "./lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "config": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/xcdl/wscript-avoider-js.git"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {},
+  "bundleDependencies": [],
+  "engines": {
+    "node": ">6.5.0"
+  }
+}
