@@ -1,7 +1,7 @@
 {
   "name": "wscript-avoider",
-  "version": "1.0.0",
-  "description": "Validation to avoid running under Windows Script Host (specific to older Windows versions).",
+  "version": "1.1.1",
+  "description": "Validation code to avoid running under Windows Script Host (specific to older Windows machines).",
   "keywords": [
     "wscript",
     "windows",
@@ -18,7 +18,7 @@
     "url": "http://liviusdotnet.wordpress.com"
   },
   "contributors": [],
-  "main": "lib/index.js",
+  "main": "lib/wscript-avoider.js",
   "directories": {
     "lib": "./lib"
   },
