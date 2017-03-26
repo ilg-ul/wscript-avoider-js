@@ -1,3 +1,8 @@
+## v2.0.1 (2017-03-26)
+
+- add badges
+- add Travis files
+
 ## v2.0.0 (2017-03-26)
 
 Warning: Incompatible API, using a static class instead of a single function.
