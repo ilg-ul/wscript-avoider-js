@@ -23,7 +23,7 @@
     "lib": "./lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard"
   },
   "config": {},
   "repository": {
@@ -31,10 +31,12 @@
     "url": "git://github.com/xcdl/wscript-avoider-js.git"
   },
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "standard": "*"
+  },
   "peerDependencies": {},
   "bundleDependencies": [],
   "engines": {
-    "node": ">6.5.0"
+    "node": ">7.*"
   }
 }
