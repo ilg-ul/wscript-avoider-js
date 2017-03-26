@@ -1,3 +1,13 @@
+## v3.0.0 (2017-03-26)
+
+- change the export method, as a member of an object, to be more similar to ES6
+
+```
+export class WscriptAvoider { ... }
+...
+import { WscriptAvoider } from 'wscript-avoider.js'
+```
+
 ## v2.0.1 (2017-03-26)
 
 - add badges

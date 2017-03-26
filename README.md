@@ -29,7 +29,8 @@ The module has only one function; call it with the application name as argument 
 
 ```javascript
 const appName = 'name'
-const WscriptAvoider = require('wscript-avoider')
+// Equivalent of import { WscriptAvoider } from 'wscript-avoider'
+const WscriptAvoider = require('wscript-avoider').WscriptAvoider
 WscriptAvoider.quitIfWscript(appName)
 ```
 
