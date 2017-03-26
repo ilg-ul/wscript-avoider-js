@@ -1,8 +1,13 @@
-# wscript-avoider-js
+[![npm (scoped)](https://img.shields.io/npm/v/wscript-avoider.svg)](https://www.npmjs.com/package/wscript-avoider) 
+[![npm](https://img.shields.io/npm/dt/wscript-avoider.svg)](https://www.npmjs.com/package/wscript-avoider)
+[![license](https://img.shields.io/github/license/xpack/wscript-avoider-js.svg)](https://github.com/xpack/wscript-avoider-js/blob/xpack/LICENSE) 
+[![Travis](https://img.shields.io/travis/xpack/wscript-avoider-js.svg?label=linux)](https://travis-ci.org/xpack/wscript-avoider-js)
 
-A node.js module to avoid running on [Windows Script Host](https://msdn.microsoft.com/en-us/library/9bbdkx3k.aspx).
+## Windows Script Host avoider
 
-The module returns a static class `WscriptAvoider` with a single static function (`quitIfWscript(name)`), that checks if the global object `WScript` is defined and quits if true.
+A `node.js` module to avoid running on [Windows Script Host](https://msdn.microsoft.com/en-us/library/9bbdkx3k.aspx).
+
+The module exports a class `WscriptAvoider` with a single static function (`quitIfWscript(name)`), that checks if the global object `WScript` is defined and quits if true.
 
 ## Prerequisites
 
