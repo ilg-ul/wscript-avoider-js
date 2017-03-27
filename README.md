@@ -1,17 +1,18 @@
 [![npm (scoped)](https://img.shields.io/npm/v/wscript-avoider.svg)](https://www.npmjs.com/package/wscript-avoider) 
 [![npm](https://img.shields.io/npm/dt/wscript-avoider.svg)](https://www.npmjs.com/package/wscript-avoider)
 [![license](https://img.shields.io/github/license/xpack/wscript-avoider-js.svg)](https://github.com/xpack/wscript-avoider-js/blob/xpack/LICENSE) 
+[![Standard](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
 [![Travis](https://img.shields.io/travis/xpack/wscript-avoider-js.svg?label=linux)](https://travis-ci.org/xpack/wscript-avoider-js)
 
 ## Windows Script Host avoider
 
-A `node.js` module to avoid running on [Windows Script Host](https://msdn.microsoft.com/en-us/library/9bbdkx3k.aspx).
+A Node.js module to avoid running on [Windows Script Host](https://msdn.microsoft.com/en-us/library/9bbdkx3k.aspx).
 
-The module exports a class `WscriptAvoider` with a single static function (`quitIfWscript(name)`), that checks if the global object `WScript` is defined and quits if true.
+The module exports a class `WscriptAvoider` with a single static function `quitIfWscript(name)`, that checks if the global object `WScript` is defined and quits if true.
 
 ## Prerequisites
 
-A recent `node.js` (>7.x), since the ECMAScript 6 class syntax is used.
+A recent Node.js (>7.x), since the ECMAScript 6 class syntax is used.
 
 ## Easy install
 
@@ -22,6 +23,15 @@ $ npm install wscript-avoider
 ```
 
 The development repository is available from the GitHub [xpack/wscript-avoider-js](https://github.com/xpack/wscript-avoider-js) project.
+
+### Testing
+
+As for any `npm` package, the standard way to run the project tests is via `npm test`:
+
+```bash
+$ cd wscript-avoider.git
+$ npm test
+```
 
 ## How to use
 
@@ -34,5 +44,21 @@ const WscriptAvoider = require('wscript-avoider').WscriptAvoider
 WscriptAvoider.quitIfWscript(appName)
 ```
 
-The string `name` should be the name of the current node.js application, as launched from a terminal window (for example `xcdl`).
+The string `name` should be the name of the current Node.js application, as launched from a terminal window (for example `xpm`).
+
+## Standard compliance
+
+This module uses ECMAScript 6 class definitions.
+
+As style, it uses the [JavaScript Standard Style](https://standardjs.com/), automatically checked at each commit via Travis CI.
+
+Known and accepted exceptions:
+
+- `/* global WScript */` to test if the global `WScript` is defined
+
+## License
+
+The original content is released under the MIT License, with
+all rights reserved to Liviu Ionescu.
+
 
