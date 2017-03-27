@@ -1,3 +1,8 @@
+## v3.0.1 (2017-03-27)
+
+- add 'standard' badge
+- use `// export ...` as comment in the sources.
+
 ## v3.0.0 (2017-03-26)
 
 - change the export method, as a member of an object, to be more similar to ES6
