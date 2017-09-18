@@ -16,22 +16,16 @@ A recent Node.js (>7.x), since the ECMAScript 6 class syntax is used.
 
 ## Easy install
 
-This module is available as [**wscript-avoider**](https://www.npmjs.com/package/wscript-avoider) from the public repository, use `npm` to install it:
+The module is available as [**wscript-avoider**](https://www.npmjs.com/package/wscript-avoider) from the public repository, use `npm` to install it in the module where it is needed:
 
 ```bash
-$ npm install wscript-avoider
+$ npm install wscript-avoider --save
 ```
+
+The module does not provide any executables, and generaly should not be installed globally.
 
 The development repository is available from the GitHub [xpack/wscript-avoider-js](https://github.com/xpack/wscript-avoider-js) project.
 
-### Testing
-
-As for any `npm` package, the standard way to run the project tests is via `npm test`:
-
-```bash
-$ cd wscript-avoider.git
-$ npm test
-```
 
 ## How to use
 
@@ -46,9 +40,18 @@ WscriptAvoider.quitIfWscript(appName)
 
 The string `name` should be the name of the current Node.js application, as launched from a terminal window (for example `xpm`).
 
+## Tests
+
+As for any `npm` package, the standard way to run the project tests is via `npm test`:
+
+```bash
+$ cd wscript-avoider.git
+$ npm test
+```
+
 ## Standard compliance
 
-This module uses ECMAScript 6 class definitions.
+The module uses ECMAScript 6 class definitions.
 
 As style, it uses the [JavaScript Standard Style](https://standardjs.com/), automatically checked at each commit via Travis CI.
 
