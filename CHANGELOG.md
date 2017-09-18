@@ -1,3 +1,8 @@
+## v3.0.2 (2017-09-18)
+
+- modernize, use './index.js' that includes 'lib/*'
+- use package.lock
+
 ## v3.0.1 (2017-03-27)
 
 - add 'standard' badge
