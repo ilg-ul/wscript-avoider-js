@@ -1,7 +1,7 @@
 /*
  * This file is part of the xPack distribution
  *   (http://xpack.github.io).
- * Copyright (c) 2015 Liviu Ionescu.
+ * Copyright (c) 2017 Liviu Ionescu.
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -25,63 +25,38 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-// ----------------------------------------------------------------------------
-
-const assert = require('assert')
+'use strict'
+/* eslint valid-jsdoc: "error" */
+/* eslint max-len: [ "error", 80, { "ignoreUrls": true } ] */
 
 // ----------------------------------------------------------------------------
 
 /**
- * @brief Static class to avoid running on Windows Script Host.
+ * This is the module entry point, the file that is processed when
+ * `require('wscript-avoider')` is called.
  *
- * @details
- * To use this class:
+ * For this to work, it must be linked from `package.json` as
+ * `"main": "./index.js",`, which is, BTW, the default behaviour.
  *
- *   const WscriptAvoider = require('wscript-avoider').WscriptAvoider
+ * This file does not define the classes itself, but imports them
+ * from various implementation files, and re-exports them.
  *
- *   WscriptAvoider.quitIfWscript(appName)
+ * To import classes from this module into Node.js applications, use:
+ *
+ * ```javascript
+ * const WscriptAvoider = require('wscript-avoider').WscriptAvoider
+ * ```
  */
-// export
-class WscriptAvoider {
-  /**
-   * @brief Avoid running on Windows Script Host.
-   * @param app_name The application name; used only to display a
-   *  meaningfull error message.
-   * @return undefined, when not running on WScript.
-   *
-   * @details
-   * Check if a global `WScript` object exists. If so, this is a bad sign,
-   * it means the script was started by Windows Script Host,
-   * instead of Node.js, and there is not much to do then quit abruptly.
-   *
-   * In normal conditions the `WScript` object does not exist,
-   * and this function returns.
-   */
-  static quitIfWscript (appName) {
-    /* global WScript */
-    if (typeof WScript !== 'undefined') {
-      WScript.echo(appName + ' does not work when run\n' +
-        'with the Windows Scripting Host\n\n' +
-        '"cd" to a different folder,\n' + 'or type "' +
-        appName + '.cmd <args>",\n' + 'or type "node ' +
-        appName + ' <args>".')
-      WScript.quit(1)
-    }
-  }
 
-  /**
-   * @brief Dummy constructor, to catch unsupported instantiations.
-   */
-  constructor () {
-    assert(false, 'WscriptAvoider is a static class, instantiation not allowed.')
-  }
-}
+// ES6: `import { WscriptAvoider } from './lib/wscript-avoider.js'
+const WscriptAvoider = require('./lib/wscript-avoider.js').WscriptAvoider
 
 // ----------------------------------------------------------------------------
 // Node.js specific export definitions.
 
 // By default, `module.exports = {}`.
-// The static class is added as a property of this object.
+// The Main class is added as a property with the same name to this object.
+
 module.exports.WscriptAvoider = WscriptAvoider
 
 // In ES6, it would be:

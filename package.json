@@ -18,12 +18,13 @@
     "url": "http://liviusdotnet.wordpress.com"
   },
   "contributors": [],
-  "main": "lib/wscript-avoider.js",
+  "main": "./index.js",
   "directories": {
     "lib": "./lib"
   },
   "scripts": {
-    "test": "standard"
+    "test": "standard",
+    "fix": "standard --fix"
   },
   "config": {},
   "repository": {
@@ -32,11 +33,12 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "standard": "*"
+    "standard": "~10.0.3"
   },
   "peerDependencies": {},
-  "bundleDependencies": [],
+  "bundledDependencies": [],
+  "optionalDependencies": [],
   "engines": {
-    "node": ">7.*"
+    "node": ">7.7.0"
   }
 }
