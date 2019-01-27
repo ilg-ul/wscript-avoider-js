@@ -1,13 +1,13 @@
 {
   "name": "wscript-avoider",
   "version": "4.0.0",
-  "description": "Validation code to avoid running under Windows Script Host (specific to older Windows machines).",
+  "description": "DEPRECATED: Validation code to avoid running under Windows Script Host (specific to older Windows machines)",
   "keywords": [
     "wscript",
     "windows",
     "avoid"
   ],
-  "homepage": "https://xcdl.github.io/",
+  "homepage": "https://github.com/ilg-ul/wscript-avoider-js",
   "bugs": {
     "url": "https://github.com/ilg-ul/wscript-avoider-js/issues"
   },
