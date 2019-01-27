@@ -1,3 +1,11 @@
+## Change log
+
+Changes in reverse chronological order.
+
+## v4.0.0 (2019-01-27)
+
+- DEPRECATED!
+
 ## v3.0.2 (2017-09-18)
 
 - modernize, use './index.js' that includes 'lib/*'
