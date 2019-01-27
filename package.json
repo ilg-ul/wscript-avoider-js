@@ -9,7 +9,7 @@
   ],
   "homepage": "https://xcdl.github.io/",
   "bugs": {
-    "url": "https://github.com/xcdl/wscript-avoider-js/issues"
+    "url": "https://github.com/ilg-ul/wscript-avoider-js/issues"
   },
   "license": "MIT",
   "author": {
@@ -23,18 +23,15 @@
     "lib": "./lib"
   },
   "scripts": {
-    "test": "standard",
-    "fix": "standard --fix"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "config": {},
   "repository": {
     "type": "git",
-    "url": "git://github.com/xcdl/wscript-avoider-js.git"
+    "url": "git://github.com/ilg-ul/wscript-avoider-js.git"
   },
   "dependencies": {},
-  "devDependencies": {
-    "standard": "~10.0.3"
-  },
+  "devDependencies": {},
   "peerDependencies": {},
   "bundledDependencies": [],
   "optionalDependencies": [],

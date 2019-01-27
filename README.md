@@ -1,66 +1,34 @@
-[![npm (scoped)](https://img.shields.io/npm/v/wscript-avoider.svg)](https://www.npmjs.com/package/wscript-avoider) 
-[![npm](https://img.shields.io/npm/dt/wscript-avoider.svg)](https://www.npmjs.com/package/wscript-avoider)
-[![license](https://img.shields.io/github/license/xpack/wscript-avoider-js.svg)](https://github.com/xpack/wscript-avoider-js/blob/xpack/LICENSE) 
-[![Standard](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
-[![Travis](https://img.shields.io/travis/xpack/wscript-avoider-js.svg?label=linux)](https://travis-ci.org/xpack/wscript-avoider-js)
+# DEPRECATED!
 
-## Windows Script Host avoider
+After a thorough analysis, it was discovered that the design of this module 
+is flowed, the detection of WSH cannot be performed later in the code, 
+since WSH will not run the advanced ES6 classes.
 
-A Node.js module to avoid running on [Windows Script Host](https://msdn.microsoft.com/en-us/library/9bbdkx3k.aspx).
+The correct sequence is to run the check right at the beginning of the
+script.
 
-The module exports a class `WscriptAvoider` with a single static function `quitIfWscript(name)`, that checks if the global object `WScript` is defined and quits if true.
+Example of a CLI launcher which refuses to run on WSH:
 
-## Prerequisites
+```js
+#!/usr/bin/env node
+// Mandatory shebang must point to `node` and this file must be executable.
 
-A recent Node.js (>7.x), since the ECMAScript 6 class syntax is used.
+; (function () { // wrapper in case we're in module_context mode
+  /* global WScript */
+  if (typeof WScript !== 'undefined') {
+    // Windows only: the script was caught by WSH, not node.
+    WScript.echo('Run this with node, not the Windows Script Host\n\n')
+    WScript.quit(1)
+  }
 
-## Easy install
+  // --------------------------------------------------------------------------
 
-The module is available as [**wscript-avoider**](https://www.npmjs.com/package/wscript-avoider) from the public repository, use `npm` to install it in the module where it is needed:
+  const Main = require('../index.js').Main
 
-```bash
-$ npm install wscript-avoider --save
+  // `start()` is async (a promise), thus `.then()` is needed
+  // to wait for it to complete.
+  Main.start().then(
+    (code) => process.exit(code)
+  )
+})()
 ```
-
-The module does not provide any executables, and generaly should not be installed globally.
-
-The development repository is available from the GitHub [xpack/wscript-avoider-js](https://github.com/xpack/wscript-avoider-js) project.
-
-
-## How to use
-
-The module has only one function; call it with the application name as argument and normally it should return. If bad luck struck and **Windows Script Host** grabbed the script, a message is displayed and the application abruptly terminates.
-
-```javascript
-const appName = 'name'
-// Equivalent of import { WscriptAvoider } from 'wscript-avoider'
-const WscriptAvoider = require('wscript-avoider').WscriptAvoider
-WscriptAvoider.quitIfWscript(appName)
-```
-
-The string `name` should be the name of the current Node.js application, as launched from a terminal window (for example `xpm`).
-
-## Tests
-
-As for any `npm` package, the standard way to run the project tests is via `npm test`:
-
-```bash
-$ cd wscript-avoider.git
-$ npm test
-```
-
-## Standard compliance
-
-The module uses ECMAScript 6 class definitions.
-
-As style, it uses the [JavaScript Standard Style](https://standardjs.com/), automatically checked at each commit via Travis CI.
-
-Known and accepted exceptions:
-
-- `/* global WScript */` to test if the global `WScript` is defined
-
-## License
-
-The original content is released under the [MIT License](https://opensource.org/licenses/MIT), with all rights reserved to [Liviu Ionescu](https://github.com/ilg-ul).
-
-

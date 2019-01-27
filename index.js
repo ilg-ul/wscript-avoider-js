@@ -30,38 +30,3 @@
 /* eslint max-len: [ "error", 80, { "ignoreUrls": true } ] */
 
 // ----------------------------------------------------------------------------
-
-/**
- * This is the module entry point, the file that is processed when
- * `require('wscript-avoider')` is called.
- *
- * For this to work, it must be linked from `package.json` as
- * `"main": "./index.js",`, which is, BTW, the default behaviour.
- *
- * This file does not define the classes itself, but imports them
- * from various implementation files, and re-exports them.
- *
- * To import classes from this module into Node.js applications, use:
- *
- * ```javascript
- * const WscriptAvoider = require('wscript-avoider').WscriptAvoider
- * ```
- */
-
-// ES6: `import { WscriptAvoider } from './lib/wscript-avoider.js'
-const WscriptAvoider = require('./lib/wscript-avoider.js').WscriptAvoider
-
-// ----------------------------------------------------------------------------
-// Node.js specific export definitions.
-
-// By default, `module.exports = {}`.
-// The Main class is added as a property with the same name to this object.
-
-module.exports.WscriptAvoider = WscriptAvoider
-
-// In ES6, it would be:
-// export class WscriptAvoider { ... }
-// ...
-// import { WscriptAvoider } from 'wscript-avoider.js'
-
-// ----------------------------------------------------------------------------
