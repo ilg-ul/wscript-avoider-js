@@ -1,6 +1,6 @@
 {
   "name": "wscript-avoider",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "DEPRECATED: Validation code to avoid running under Windows Script Host (specific to older Windows machines)",
   "keywords": [
     "wscript",
