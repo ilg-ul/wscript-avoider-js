@@ -2,6 +2,10 @@
 
 Changes in reverse chronological order.
 
+## v4.0.1 (2019-01-27)
+
+- add DEPRECATED to the package description.
+  
 ## v4.0.0 (2019-01-27)
 
 - DEPRECATED!
